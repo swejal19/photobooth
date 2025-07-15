@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Frame</title>
+  <link rel="stylesheet" href="preview.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h2 class="heading winky-rough">Your Photo Strip</h2>
+    <div class="frame-container">
+      <canvas id="finalCanvas"></canvas>
+    </div>
+
+    <div class="bg-scroll-container">
+      <p class="selectbg winky-rough">Select Background</p>
+      <div class="bg-carousel">
+        <button id="leftBtn"><--</button>
+        <img id="bgPreview" src="./assets/backgrounds/beach.jpg" alt="Background Preview">
+        <button id="rightBtn"> --> </button>
+      </div>
+    </div>
+
+    <button id="generateBtn">Generate Final Image</button>
+    <button class="download"><a id="downloadLink" download="photostrip.png" class="hidden">Download</a></button>
+    <button class="home"><a class="ahome" href="./index.html">Home</a></button>
+
+  </div>
+  <script src="preview.js"></script>
+</body>
+</html>

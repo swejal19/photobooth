@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhotoBooth</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="heading winky-rough">📸 PhotoBooth</h1>
+  <div class="container">
+    <div class="singleframe">
+      <div class="camera-section">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" class="hidden"></canvas>
+      </div>
+      <div class="filter-buttons">
+        <button class="fb" data-filter="none">No Filter</button>
+        <button class="fb" data-filter="grayscale(1)">Grayscale</button>
+        <button class="fb" data-filter="sepia(1)">Sepia</button>
+        <button class="fb" data-filter="blur(3px)">Blur</button>
+      </div>
+      <div class="action-buttons">
+        <button id="clickBtn">📸</button>
+        <button id="retakeBtn" class="hidden">🔄 Retake</button>
+        <button id="nextBtn" class="hidden">➡️ Next Photo</button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
