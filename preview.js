@@ -40,7 +40,7 @@ function drawFinal() {
   const ctx = finalCanvas.getContext("2d");
 
   const width = 320;
-  const height = 280;
+  const height = 260;
 
   const padding = 20;
   const totalHeight = height * 3 + padding * 4;
@@ -65,7 +65,7 @@ function drawFinal() {
 function drawPhotos() {
   const ctx = finalCanvas.getContext("2d");
   const width = 320;
-  const height = 280;
+  const height = 260;
   const padding = 20;
 
   photos.forEach((imgData, index) => {
