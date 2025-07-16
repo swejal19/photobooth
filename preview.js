@@ -62,35 +62,6 @@ function drawFinal() {
   }
 }
 
-// function drawPhotos() {
-//   const ctx = finalCanvas.getContext("2d");
-//   const width = 340;
-//   const height = 260;
-
-//   const padding = 20;
-
-//   photos.forEach((imgData, index) => {
-//     const img = new Image();
-//     img.src = imgData;
-//     img.onload = () => {
-//       ctx.drawImage(
-//         img,
-//         padding,
-//         padding + index * (height + padding),
-//         width,
-//         height
-//       );
-
-//       if (index === photos.length - 1) {
-//         const finalImg = finalCanvas.toDataURL("image/png");
-//         downloadLink.href = finalImg;
-//         downloadLink.classList.remove("hidden");
-//         downloadLink.innerText = "Download";
-//       }
-//     };
-//   });
-// }
-
 function drawPhotos() {
   const ctx = finalCanvas.getContext("2d");
   const width = 320;
@@ -105,10 +76,8 @@ function drawPhotos() {
       const x = padding;
       const y = padding + index * (height + padding);
 
-      // Even if image is smaller, this forces drawing at full size
       ctx.drawImage(img, x, y, width, height);
 
-      // Show download link after last image
       if (index === photos.length - 1) {
         const finalImg = finalCanvas.toDataURL("image/png");
         downloadLink.href = finalImg;
@@ -118,10 +87,5 @@ function drawPhotos() {
     };
   });
 }
-
-
-generateBtn.addEventListener("click", () => {
-  drawFinal();
-});
 
 updatePreview();
