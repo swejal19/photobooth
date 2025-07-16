@@ -3,11 +3,11 @@ const canvas = document.getElementById("canvas");
 const clickBtn = document.getElementById("clickBtn");
 const retakeBtn = document.getElementById("retakeBtn");
 const nextBtn = document.getElementById("nextBtn");
-const filterButtons = document.querySelectorAll(".filter-buttons button");
+const filterbuttons = document.querySelectorAll(".filter-buttons button");
 
-let currentFilter = "none";
+let currentfilter = "none";
 let photos = [];
-let photoCount = 0;
+let photocount = 0;
 
 navigator.mediaDevices.getUserMedia({ video: true })
   .then((stream) => {
@@ -18,10 +18,10 @@ navigator.mediaDevices.getUserMedia({ video: true })
     console.error(err);
   });
 
-filterButtons.forEach((btn) => {
+filterbuttons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    currentFilter = btn.getAttribute("data-filter");
-    video.style.filter = currentFilter;
+    currentfilter = btn.getAttribute("data-filter");
+    video.style.filter = currentfilter;
   });
 });
 
@@ -30,27 +30,27 @@ clickBtn.addEventListener("click", () => {
   video.classList.add("hidden");
   retakeBtn.classList.remove("hidden");
   clickBtn.classList.add("hidden");
-  filterButtons.forEach((fb)=>{
+  filterbuttons.forEach((fb)=>{
     fb.classList.add("hidden");
   });
   
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   const ctx = canvas.getContext("2d");
-  ctx.filter = currentFilter;
+  ctx.filter = currentfilter;
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-  const imageData = canvas.toDataURL("image/png");
-  photos[photoCount] = imageData;
+  const imagedata = canvas.toDataURL("image/png");
+  photos[photocount] = imagedata;
   nextBtn.classList.remove("hidden");
 });
 
 nextBtn.addEventListener("click", () => {
-  filterButtons.forEach((fb)=>{
+  filterbuttons.forEach((fb)=>{
     fb.classList.remove("hidden");
   });
-  photoCount++;
-  if (photoCount < 3) {
+  photocount++;
+  if (photocount < 3) {
     canvas.classList.add("hidden");
     video.classList.remove("hidden");
     retakeBtn.classList.add("hidden");
@@ -68,7 +68,7 @@ retakeBtn.addEventListener("click", () => {
   clickBtn.classList.remove("hidden");
   retakeBtn.classList.add("hidden");
   nextBtn.classList.add("hidden");
-  filterButtons.forEach((fb)=>{
+  filterbuttons.forEach((fb)=>{
     fb.classList.remove("hidden");
   });
 });

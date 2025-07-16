@@ -81,20 +81,20 @@ body {
 
 .download,.home{
   padding: 10px 16px;
-  margin: 6px;
+  margin:18px 6px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
   background-color: #ffed88;
   color: rgb(0, 0, 0);
-
+  font-size: 18px;
   &:hover{
     box-shadow: 8px 8px 10px rgb(107, 107, 107);
   }
 }
 
 .download{
-    background-color: #7dff55;
+    background-color: #038C4C;
 }
 .home{
 background-color: #ffffff;
@@ -102,4 +102,7 @@ background-color: #ffffff;
 #downloadLink,.ahome{
     text-decoration: none;
     color: black;
+}
+#downloadLink{
+  color: white;
 }
