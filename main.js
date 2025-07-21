@@ -36,9 +36,9 @@ clickBtn.addEventListener("click", () => {
   
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
-  const ctx = canvas.getContext("2d");
-  ctx.filter = currentfilter;
-  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  const ctx = canvas.getContext("2d");               
+  ctx.filter = currentfilter;          
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);                       
 
   const imagedata = canvas.toDataURL("image/png");
   photos[photocount] = imagedata;

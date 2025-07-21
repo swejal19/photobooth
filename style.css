@@ -38,6 +38,7 @@ video, canvas {
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 10px;
+  transform: scaleX(-1);
 }
 
 .fb,#retakeBtn,#nextBtn{

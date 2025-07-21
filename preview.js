@@ -76,7 +76,11 @@ function drawPhotos() {
       const x = padding;
       const y = padding + index * (height + padding);
 
-      ctx.drawImage(img, x, y, width, height);
+      ctx.save(); 
+      ctx.translate(x + width, y);
+      ctx.scale(-1, 1);
+      ctx.drawImage(img, 0, 0, width, height);
+      ctx.restore();
 
       if (index === photos.length - 1) {
         const finalImg = finalCanvas.toDataURL("image/png");
